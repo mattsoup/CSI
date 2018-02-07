@@ -59,8 +59,8 @@ def get_genes(species, file):
             header = regex.group(1)
             scaffold_dict[header] = set([])
         elif (tbl[x].startswith("\t\t\tgene\t") and "pseudo" not in tbl[x + 2]
-             and "tRNA" not in tbl[x] and
-             ("CDS" in tbl[x-1] or "CDS" in tbl[x-2] or "rRNA" in tbl[x-1])):
+              and "tRNA" not in tbl[x] and
+              ("CDS" in tbl[x-1] or "CDS" in tbl[x-2] or "rRNA" in tbl[x-1])):
             regex = re.match("\t\t\tgene\t(.*?)\n", tbl[x])
             gene = regex.group(1)
             scaffold_dict[header].add(gene)
